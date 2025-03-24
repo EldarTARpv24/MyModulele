@@ -41,4 +41,4 @@ def recover_password():    # создание функции recover_password
     if username in usernames:
         print(f"Ваш пароль: {passwords[usernames.index(username)]}")   # если есть username в usernames, тогда показывает пароль, который соответств позиции этого пользователя
     else:
-        print("Пользователь не найден.")g
+        print("Пользователь не найден.")
