@@ -5,40 +5,40 @@ usernames = []  # список пользователей
 passwords = []  # список паролей
 
 def login():        # создание функции login
-    username = input("Введите логин: ")
-    password = input("Введите пароль: ")
+    username = input("Sisestage sisselogimine: ")
+    password = input("Sisestage parool: ")
 
     if username in usernames and passwords[usernames.index(username)] == password:   # если username есть в usernames и пароль соответств той позиции username из usernames, в которую он вложен
-        print("Вы успешно вошли!")
+        print("Olete edukalt sisse loginud!")
     else:
-        print("Неверный логин или пароль.")
+        print("Vale sisselogimine või parool.")
 
 def register():   # создание функции register
-    username = input("Введите логин для регистрации: ")   # запрос имени
+    username = input("Registreerimiseks sisestage oma sisselogimine: ")   # запрос имени
     if username in usernames:   # если есть username в usernames, тогда невозможно рег
-        print("Этот логин уже занят.")
+        print("See sisselogimine on juba hõivatud.")
     else:
-        password = input("Введите пароль для регистрации: ")
+        password = input("Registreerimiseks sisestage parool: ")
         usernames.append(username)    # добавляет в конец новый username в usernames
         passwords.append(password)    # добавляет в конец новый пароль в passwords
-        print(f"Пользователь {username} успешно зарегистрирован!")
+        print(f"Kasutaja {username} edukalt registreeritud!")
 
 def change_password():      # создание функции change_password
-    username = input("Введите логин для смены пароля: ")
+    username = input("Parooli muutmiseks sisestage sisselogimine: ")
     if username in usernames:    # если есть username в usernames
-        old_password = input("Введите старый пароль: ")      # треюуется ввести старый пароль, чтобы сделать новый
+        old_password = input("Sisestage vana parool: ")      # треюуется ввести старый пароль, чтобы сделать новый
         if passwords[usernames.index(username)] == old_password:  # если пароль соответств паролю, приаязанному к username, то предлагает сменить
-            new_password = input("Введите новый пароль: ")
+            new_password = input("Sisestage uus parool: ")
             passwords[usernames.index(username)] = new_password   # смена пароля на новый
-            print("Пароль успешно изменен.")
+            print("Parooli muutmine õnnestus.")
         else:
-            print("Неверный старый пароль.")
+            print("Vale vana parool.")
     else:
-        print("Пользователь не найден.")
+        print("Kasutajat ei leitud.")
 
 def recover_password():    # создание функции recover_password
-    username = input("Введите логин для восстановления пароля: ")
+    username = input("Parooli taastamiseks sisestage oma sisselogimine: ")
     if username in usernames:
-        print(f"Ваш пароль: {passwords[usernames.index(username)]}")   # если есть username в usernames, тогда показывает пароль, который соответств позиции этого пользователя
+        print(f"Teie parool: {passwords[usernames.index(username)]}")   # если есть username в usernames, тогда показывает пароль, который соответств позиции этого пользователя
     else:
-        print("Пользователь не найден.")
+        print("Kasutajat ei leitud.")
