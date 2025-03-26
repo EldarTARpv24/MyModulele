@@ -34,12 +34,11 @@ def sisseastumine():
 
             print("\nСписок поступивших:")
             for i in range(min(count, len(added))):
-                print(f"{added[i][0]} - {added[i][1]}")
+                print(f"{added[i]} - {added[i]}")
 
         elif valik == 2:
             people = list(zip(абитуриенты, баллы))
             
-            # Сортировка вручную по алфавиту
             for i in range(len(people) - 1):
                 for gg2 in range(len(people) - i - 1):
                     if people[gg2] > people[gg2 + 1]:  
@@ -55,7 +54,7 @@ def sisseastumine():
 
             for i in range(len(lower_oscenka) - 1):
                 for gg3 in range(len(lower_oscenka) - i - 1):
-                    if lower_oscenka[gg3][1] > lower_oscenka[gg3 + 1][1]:  
+                    if lower_oscenka[gg3] > lower_oscenka[gg3 + 1]:  
                         lower_oscenka[gg3], lower_oscenka[gg3 + 1] = lower_oscenka[gg3 + 1], lower_oscenka[gg3]
 
             print("Худшие результаты:")
